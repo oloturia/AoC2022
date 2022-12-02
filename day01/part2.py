@@ -12,11 +12,11 @@ def main(input_file):
 			totCal = 0
 		else:
 			totCal += int(line) 
-	elves.append(totCal)
+	
 	
 	elves.sort(reverse=True)
 	maxCal = 0
-	
+	print(elves)
 	for i in range(0,3):
 		maxCal += elves[i]
 	
