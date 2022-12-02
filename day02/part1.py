@@ -13,7 +13,7 @@ def main(input_file):
 				score += 3
 			elif line[0] == "C":
 				score += 6
-		elif line[2] == "Y": #carta
+		elif line[2] == "Y":
 			score += 2
 			if line[0] == "B":
 				score += 3
