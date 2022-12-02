@@ -5,7 +5,6 @@ def main(input_file):
 		input_lines = [line.rstrip() for line in f.readlines()]
 
 	score = 0
-	tot= 0
 	for line in input_lines:
 		if line[2] == "X": 
 			score += 1
