@@ -13,7 +13,7 @@ def main(input_file):
 			totCal = 0
 		else:
 			totCal += int(line) 
-
+	
 	return 	maxCal
 
 if __name__ == "__main__":
