@@ -9,7 +9,7 @@ def main(input_file):
 	for line in input_lines:
 		compart1 = set(line[:len(line)//2])
 		compart2 = set(line[len(line)//2:])
-		priorities += calcprior( str(compart1.intersection(compart2))[2] )
+		priorities += calcprior( str(compart1 & compart2)[2] )
 		
 	return priorities
 

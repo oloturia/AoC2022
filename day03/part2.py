@@ -7,7 +7,7 @@ def main(input_file):
 	priorities = 0
 	calcprior = lambda p: ord(p) - 96 if ord(p) >= 97 else ord(p) - 38
 	for i in range(0,len(input_lines),3):
-		badge = str(input_lines[i].intersection(input_lines[i+1]).intersection(input_lines[i+2]))[2]
+		badge = str(input_lines[i] & input_lines[i+1] & input_lines[i+2])[2]
 		priorities += calcprior(badge)
 	return priorities
 
