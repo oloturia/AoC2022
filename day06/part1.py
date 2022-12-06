@@ -4,7 +4,7 @@ def main(input_file):
 	with open(input_file) as f:
 		input_lines = [line.rstrip() for line in f.readlines()]
 
-	for i in range(0,len(input_lines[0])-2):
+	for i in range(0,len(input_lines[0])-3):
 		if len(set(input_lines[0][i:i+4])) == 4:			
 			break
 	return 	i+4
