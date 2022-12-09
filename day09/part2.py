@@ -11,7 +11,7 @@ def main(input_file):
 	visited = {(0,0)}
 	dirs = {'U':{'x':1,'y':0},'D':{'x':-1,'y':0},'L':{'x':0,'y':-1},'R':{'x':0,'y':1}}
 	for line in input_lines:
-		for i in range(0,int(line.split()[1])):
+		for _ in range(0,int(line.split()[1])):
 			pos[0]['x'] = pos[0]['x'] + dirs[line.split()[0]]['x']
 			pos[0]['y'] = pos[0]['y'] + dirs[line.split()[0]]['y']
 			for i in range(1,len(pos)):
