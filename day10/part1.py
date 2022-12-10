@@ -6,19 +6,19 @@ def main(input_file):
 	
 	regX = 1
 	cycle = 0
-	signal_strenght = 0
+	signal_strength = 0
 	for line in input_lines:
 		if line == "noop":
 			cycle +=1
-			if (cycle-20)%40 == 0: signal_strenght += cycle * regX
+			if (cycle-20)%40 == 0: signal_strength += cycle * regX
 		else:
 			cycle +=1
-			if (cycle-20)%40 == 0: signal_strenght += cycle * regX
+			if (cycle-20)%40 == 0: signal_strength += cycle * regX
 			cycle +=1
-			if (cycle-20)%40 == 0: signal_strenght += cycle * regX
+			if (cycle-20)%40 == 0: signal_strength += cycle * regX
 			regX += int(line.split()[1])
 			
-	return signal_strenght
+	return signal_strength
 
 if __name__ == "__main__":
 	test_value = main("TEST")
