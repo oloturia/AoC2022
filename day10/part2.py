@@ -35,7 +35,6 @@ def main(input_file):
 			cycle += draw_pixel(cycle,regX)
 			cycle += draw_pixel(cycle,regX)
 			regX += int(line.split()[1])
-			
 	return render()
 
 if __name__ == "__main__":

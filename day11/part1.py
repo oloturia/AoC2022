@@ -14,7 +14,6 @@ def main(input_file):
 		monkey = int(input_lines[line_no].split()[1][0])
 		monkeys[monkey] = {'inspected':0,'items': [ int(x) for x in input_lines[line_no+1][18:].replace(',','').split()], 'operations': input_lines[line_no+2].split()[3:], 'test': int(input_lines[line_no+3].split()[3]), 'true': int(input_lines[line_no+4].split()[5]), 'false': int(input_lines[line_no+5].split()[5])}
 		
-	
 	for i in range (0,20):
 		for monkey in monkeys.values():
 			for item in monkey['items']:
@@ -26,6 +25,7 @@ def main(input_file):
 				else:
 					monkeys[monkey['false']]['items'].append(worry_level)
 			monkey['items'] = []
+			
 	inspected = list()
 	for m in monkeys.values():
 		inspected.append(m['inspected'])

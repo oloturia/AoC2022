@@ -26,6 +26,7 @@ def main(input_file):
 				else:
 					monkeys[monkey['false']]['items'].append(worry_level%factor)
 			monkey['items'] = []
+			
 	inspected = list()
 	for m in monkeys.values():
 		inspected.append(m['inspected'])		
