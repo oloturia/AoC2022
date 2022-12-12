@@ -65,11 +65,22 @@ def main(input_file):
 				path[i] = alternate
 				adj_node[i] = cur
 	path_dim = 0
+	visual = dict()
 	while True:
 		end = adj_node[end]
+		
 		if end is None:
 			break
 		path_dim +=1
+		visual[end] = path_dim
+	for x in range(0,bounds['x']):
+		for y in range(0,bounds['y']):
+			try:
+				print(str(visual[x,y]).rjust(4-len(str(visual[x,y]))),end="")
+			except:
+				print("...",end="")
+		print("")
+		
 	return path_dim
 
 if __name__ == "__main__":
