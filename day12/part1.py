@@ -35,6 +35,8 @@ def main(input_file):
 				if not( x+d['x'] == -1 or x+d['x'] == bounds['x'] or y+d['y'] == -1 or y+d['y'] == bounds['y'] ):
 					if ord(hmap[(x+d['x'],y+d['y'])]) -1 <= ord(hmap[(x,y)]) <= ord(hmap[(x+d['x'],y+d['y'])]):
 						wmap[(x,y)][ (x+d['x'], y+d['y']) ] = 1
+					else:
+						wmap[(x,y)][ (x+d['x'], y+d['y']) ] = 9000000000000
 	
 	
 
