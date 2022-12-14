@@ -1,18 +1,5 @@
 #!/usr/bin/python3
 
-def render_cave(cave):
-	xmin = 494
-	ymin = 0
-	xmax = 503
-	ymax = 9
-	for y in range(ymin,ymax+1):
-		for x in range(xmin,xmax+1):
-			if (x,y) in cave:
-				print("#",end="")
-			else:
-				print(".",end="")
-		print("")
-
 def main(input_file):
 	with open(input_file) as f:
 		input_lines = [line.rstrip() for line in f.readlines()]
