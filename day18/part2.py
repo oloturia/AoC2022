@@ -5,9 +5,6 @@ def check_connection(c1,c2):
 		return True
 	return False
 		
-
-		
-	
 def main(input_file):
 	with open(input_file) as f:
 		input_lines = [line.rstrip() for line in f.readlines()]
@@ -17,7 +14,6 @@ def main(input_file):
 	for line in input_lines:
 		cubes.add((int(line.split(',')[0]),int(line.split(',')[1]),int(line.split(',')[2])))
 		sides += 6
-
 
 	max_z = 0
 	max_y = 0
