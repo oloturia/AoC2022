@@ -16,7 +16,7 @@ def main(input_file, factor):
 			orig_vals[line.split()[0][0:4]] = int(line.split()[1])
 		else:
 			ops[line.split()[0][0:4]] = {"f1":line.split()[1],"f2":line.split()[3],"op":line.split()[2]}
-	humn = 3343167719440
+
 	vals = orig_vals
 	conf2 = operations(ops[ops["root"]["f2"]])
 	humn= prev_humn =0
