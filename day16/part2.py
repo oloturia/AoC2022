@@ -83,7 +83,7 @@ def main(input_file):
 
 		human = tuple(sorted(human_unsorted))					
 		if human in cache:
-			value_human = cache[human][0]
+			value_human = cache[human]
 		else:
 			value_human = best_path(human)
 		for elephant_unsorted in poss_combinations:
@@ -93,43 +93,26 @@ def main(input_file):
 				if elephant == () or len(elephant) >= len(elements)-factor:
 					continue
 				if elephant in cache:
-					value_elephant = cache[elephant][0]
+					value_elephant = cache[elephant]
 				else:
-					cached_value = 0
-					cached_minutes = 0
-					cached_path = tuple()
-					
-					for v_index in range(len(elephant),1,-1):
-						if elephant[:v_index] in cache:
-							cached_value = cache[elephant[:v_index]][0]
-							cached_minutes = cache[elephant[:v_index]][1]
-							cached_path = elephant[:v_index]
-							uncached_path = elephant[v_index:]
-							break
-							
-					if cached_value == 0:
-						value_elephant = best_path(elephant)
-					else:
-						value_elephant = best_path(uncached_path,minutes_orig=cached_minutes,partial=cached_path,orig_value=cached_value)
+					value_elephant = best_path(elephant)
 
 				if (value_human + value_elephant) > best_value:
 					best_value = value_human + value_elephant
 	return best_value					
 
 	
-def best_path(orig_path,minutes_orig=26,partial=tuple(),orig_value=0):
+def best_path(orig_path):
 	global distances
 	global cache
 	global min_cache_len
 	
-	best_value = orig_value
 	best_value = 0
 	perma_path = permutations(orig_path)	
 
 	for path in perma_path:
 		value = 0
 		curr_pos = "AA"	
-		minutes = minutes_orig
 		minutes = 26
 		for i,step in enumerate(path):
 			minutes -= distances[curr_pos][step]+1
@@ -140,7 +123,7 @@ def best_path(orig_path,minutes_orig=26,partial=tuple(),orig_value=0):
 		if value > best_value:
 			best_value = value
 			
-	cache.update({orig_path:(best_value,minutes)})
+	cache.update({orig_path:best_value})
 	return best_value
 
 	
